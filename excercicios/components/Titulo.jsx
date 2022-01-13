@@ -1,7 +1,14 @@
 export default function Titulo(props) {
-    return 
-        (<>
-            <h1>Título</h1>
-            <h2>SubTitulo</h2>
-        </>)
+    
+    return props.pequeno ? ( //operador ternario
+            <>
+                <p>{props.titulo}</p>
+                <p>{props.subtitulo}</p>
+            </>
+            ) : (
+            <>
+                <h1>{props.titulo}</h1>
+                <h2>{props.subtitulo}</h2>
+            </>
+        )
 }
