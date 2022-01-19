@@ -11,7 +11,6 @@ export default function Linha2(){
             <Celula />
             <Celula preta/>
             <Celula />
-            <Celula preta/>
         </div>
     )
 }
