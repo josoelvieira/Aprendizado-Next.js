@@ -1,4 +1,5 @@
 export function mega(qtde = 6, numeros = []) {
+    qtde = +qtde
     if(qtde < 6 && qtde > 60) {
         throw 'Número inválido';
     }
@@ -10,5 +11,7 @@ export function mega(qtde = 6, numeros = []) {
     const numeroAleatorio = parseInt(Math.random() * 60) + 1
     if (!numeros.includes(numeroAleatorio)) {
         return mega(qtde, [...numeros, numeroAleatorio]);
-    } else mega (qtde, numeros)
+    } else {
+        return mega (qtde, numeros)
+    }
 }

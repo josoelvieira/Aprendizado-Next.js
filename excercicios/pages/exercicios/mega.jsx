@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Display from "../../components/Display";
 import { mega } from "../../function/mega";
 
 export default function megasena() {
-    const [numeros, setNumeros] = useState(mega())
+    const [qtde, setQtde] = useState(6);
+    const [numeros, setNumeros] = useState([])
+    
+    useEffect(() => {
+        setNumeros(mega())
+    }, [])
 
     function rederizarNumeros() {
         return numeros.map(
@@ -20,11 +25,15 @@ export default function megasena() {
             <h1>Megasena</h1>
             <div style={{
                 display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
                 flexDirection: "row",
-
-            }}>{rederizarNumeros()}</div>
-            <input type="text" />
-            <button onClick={() => setNumeros (mega())}>Gerar aposta</button>
+            }}>
+                {rederizarNumeros()}
+            </div>
+            <span>Numero de apostas</span>
+            <input type="number" min={6} max={20} value={qtde} onChange={e => setQtde(e.target.value)}/>
+            <button onClick={() => setNumeros (mega(qtde))}>Gerar aposta</button>
         </div>
     )
 

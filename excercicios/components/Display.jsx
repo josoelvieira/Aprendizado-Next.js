@@ -4,10 +4,14 @@ export default function Display(props) {
         justifyContent:"center",
         alignItems:"center",
         textAlign:"center",
-        with:"50px",
-        height:"50px",
-        borderRadius:"25px",
-        background:"#222"}}>
+        with:"100px",
+        height:"100px",
+        borderRadius:"100%",
+        background:"#222",
+        padding:"40px",
+        margin:"10px",
+        color:"#fff",
+        }}>
             <h1>{props.numeros}</h1>
         </div>
     )
