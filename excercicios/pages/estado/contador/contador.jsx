@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Display from "../../../components/Display";
 
 export default function (){
     const painel = {
@@ -26,7 +27,7 @@ export default function (){
         <div>
             <div>
             <h1>Contador</h1>
-            <div>Visor: {x}</div>
+            <Display x={x}/>
             <div><button style={botao} onClick={somaUm}>+</button>
             <button style={botao} onClick={diminueUm}>-</button></div>
             </div>
