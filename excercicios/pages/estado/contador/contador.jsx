@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function (){
     const painel = {
         background:"#222",
@@ -10,13 +12,23 @@ export default function (){
         const botao ={
             width:"100px",
         }
+        const [x, setX] = useState(0);
+
+        function somaUm(){
+            setX(x + 1)
+            console.log(x)
+        }
+        function diminueUm(){
+            setX(x - 1)
+            console.log(x)
+        }
     return (
-        <div style={painel}>
+        <div>
             <div>
             <h1>Contador</h1>
-            <div>Visor: ???</div>
-            <div><button style={botao} onClick={}>+</button>
-            <button style={botao} onClick={}>-</button></div>
+            <div>Visor: {x}</div>
+            <div><button style={botao} onClick={somaUm}>+</button>
+            <button style={botao} onClick={diminueUm}>-</button></div>
             </div>
         </div>
     )
